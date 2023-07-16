@@ -1,0 +1,22 @@
+{
+  "name": "com.kalenarendt.my.rpg.simpledialog",
+  "version": "1.0.0",
+  "displayName": "My.RPG.SimpleDialog",
+  "description": "My RPG Simple Dialog unity package.",
+  "unity": "2018.1",
+  "keywords": [
+    "my",
+    "core",
+    "unity",
+    "rpg",
+    "dialog"
+  ],
+  "author": {
+    "name": "Kalen Arendt",
+    "email": "dev.kalenarendt@gmail.com"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "1.5.1",
+    "com.kalenarendt.my.core": "1.0.0"
+  }
+}
