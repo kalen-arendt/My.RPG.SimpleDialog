@@ -1,5 +1,4 @@
-﻿using My.Core.Extensions.Generic;
-using My.Core.Extentions.Strings;
+﻿using My.Core.Extentions.Strings;
 using My.Unity.Extensions;
 
 using UnityEngine;
@@ -59,17 +58,7 @@ namespace My.RPG.SimpleDialog
 
       protected void SetIconActive (bool active)
       {
-         if (actionIcon != null)
-         {
-            actionIcon.SetActive(active);
-         }
-
-
-         //actionIcon.OrElse(null)?.SetActive(active);
-
-         //actionIcon.IfNotNull(x => x.SetActive(active));
-
-         //actionIcon.NullIfDestroyed()?.SetActive(active);
+         actionIcon.IfNotNull(x => x.SetActive(active));
       }
    }
 }

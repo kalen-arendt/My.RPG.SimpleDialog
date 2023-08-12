@@ -1,4 +1,6 @@
-﻿using My.Unity.Patterns;
+﻿using System;
+
+using My.Unity.Patterns;
 
 using TMPro;
 
@@ -40,7 +42,7 @@ namespace My.RPG.SimpleDialog
          Instance = null;
       }
 
-      protected void OnSubmit (InputValue value)
+      protected void OnSubmit (InputValue _)
       {
          if (IsInputActive)
          {

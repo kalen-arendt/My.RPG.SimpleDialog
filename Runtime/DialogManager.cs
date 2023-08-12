@@ -18,7 +18,7 @@ namespace My.RPG.SimpleDialog
       public bool IsInputActive { get; private set; } = false;
       public IDialogManager Singleton => Instance;
 
-      public static IDialogManager Instance { get; private set; }
+      public static IDialogManager Instance { get; private set; } = null;
 
       protected void Awake ()
       {
@@ -27,17 +27,21 @@ namespace My.RPG.SimpleDialog
             Instance = this;
             dialogUI.Close();
          }
+         else
+         {
+            DestroyImmediate(this);
+         }
       }
 
       protected void OnDestroy () // this will only get called if the entire UI is destroyed
       {
-         if (this == Instance)
+         if (Equals(Instance))
          {
             Instance = null;
          }
       }
 
-      protected void OnSubmit (InputValue value)
+      protected void OnSubmit (InputValue _)
       {
          if (IsInputActive)
          {
@@ -89,7 +93,7 @@ namespace My.RPG.SimpleDialog
       private void Next ()
       {
          lineIndex++;
-         string line = GetCurrentLine();
+         var line = GetCurrentLine();
 
          if (line != null)
          {
@@ -106,7 +110,7 @@ namespace My.RPG.SimpleDialog
 
       private void MoveNextMessage ()
       {
-         string line = GetCurrentLine();
+         var line = GetCurrentLine();
          if (line != null)
          {
             dialogUI.DisplaySpeakerName(GetCurrentMessage());
@@ -134,8 +138,8 @@ namespace My.RPG.SimpleDialog
       {
          IMessage msg = GetCurrentMessage();
          return msg != null && lineIndex < msg.Length
-          ? msg[lineIndex]
-          : null;
+            ? msg[lineIndex]
+            : null;
       }
 
       private IMessage GetCurrentMessage ()
