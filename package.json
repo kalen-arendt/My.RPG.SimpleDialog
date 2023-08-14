@@ -16,7 +16,8 @@
     "email": "dev.kalenarendt@gmail.com"
   },
   "dependencies": {
+    "com.kalenarendt.my.core": "1.0.0",
     "com.unity.inputsystem": "1.5.1",
-    "com.kalenarendt.my.core": "1.0.0"
+    "com.unity.textmeshpro": "3.0.6"
   }
 }
